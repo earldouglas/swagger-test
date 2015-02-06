@@ -1,0 +1,80 @@
+{
+  "swagger": "2.0",
+  "host": "localhost",
+  "info": {
+    "version": "1.0.0",
+    "title": "Pet store"
+  },
+  "basePath": "/v1",
+  "paths": {
+    "/pets": {
+      "get": {
+        "produces": [ "application/json" ],
+        "responses": {
+          "200": {
+            "description": "Returns all the pets"
+          }
+        },
+        "x-amples": [
+          {
+            "request": { },
+            "response": {
+              "status": 200,
+              "headers": {
+                "content-type": "application/json"
+              }
+            }
+          }
+        ]
+      }
+    },
+    "/pets/{id}": {
+      "get": {
+        "produces": [ "application/json" ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "The pet id",
+            "type": "string",
+            "required": true,
+            "default": "fido3"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Returns a single pet"
+          }
+        },
+        "x-amples": [
+          {
+            "request": {
+              "params": {
+                "id": "fido4"
+              }
+            },
+            "response": {
+              "status": 200,
+              "headers": {
+                "content-type": "application/json"
+              }
+            }
+          },
+          {
+            "request": {
+              "params": {
+                "id": "fido7"
+              }
+            },
+            "response": {
+              "status": 200,
+              "headers": {
+                "content-type": "application/json"
+              }
+            }
+          }
+        ]
+      }
+    }
+  }
+}

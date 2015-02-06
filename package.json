@@ -1,0 +1,33 @@
+{
+  "name": "swagger-test",
+  "version": "0.1.0",
+  "description": "Specification-driven REST API testing",
+  "main": "lib/swagger-test.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/earldouglas/swagger-test"
+  },
+  "keywords": [
+    "swagger",
+    "specification",
+    "spec",
+    "testing",
+    "test"
+  ],
+  "author": "James Earl Douglas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/earldouglas/swagger-test/issues"
+  },
+  "homepage": "https://github.com/earldouglas/swagger-test",
+  "dependencies": {
+    "url-template": "2.0.4"
+  },
+  "devDependencies": {
+    "mocha": "2.1.0",
+    "chai": "1.10.0"
+  }
+}
