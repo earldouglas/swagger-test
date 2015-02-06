@@ -6,13 +6,13 @@ var fs = require('fs');
 var swaggerTest = require('../lib/swagger-test');
 var assert = require('chai').assert;
 
-describe('test generation', function () {
+describe('test generation with inference', function () {
 
   var testDir = __dirname;
   var buffer  = fs.readFileSync(testDir + '/swagger.json');
   var spec    = JSON.parse(buffer);
 
-  var xamples = swaggerTest.parse(spec);
+  var xamples = swaggerTest.parse(spec, { inferXamples: true });
 
   it('should contain three test cases', function () {
     assert.equal(xamples.length, 3);
@@ -21,7 +21,6 @@ describe('test generation', function () {
   it('should first test GET /pets', function () {
       assert.deepEqual(xamples[0], {
           "description": "get /pets",
-          "prereqs": [],
           "request": {
               "method": "get",
               "uri": "localhost/v1/pets"
@@ -38,7 +37,6 @@ describe('test generation', function () {
   it ('should next test GET /pets/fido4', function () {
       assert.deepEqual(xamples[1], {
           "description": "get /pets/{id}",
-          "prereqs": [],
           "request": {
               "params": {
                   "id": "fido4"
@@ -58,7 +56,6 @@ describe('test generation', function () {
   it ('should next test GET /pets/fido7', function () {
       assert.deepEqual(xamples[2], {
         "description": "get /pets/{id}",
-        "prereqs": [],
         "request": {
             "params": {
                 "id": "fido7"
