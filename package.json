@@ -4,7 +4,9 @@
   "description": "Specification-driven REST API testing",
   "main": "lib/swagger-test.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "coverage": "istanbul cover _mocha --report lcovonly -- -R spec",
+    "coveralls": "cat ./coverage/lcov.info | coveralls && rm -rf ./coverage"
   },
   "repository": {
     "type": "git",
@@ -28,6 +30,9 @@
   },
   "devDependencies": {
     "mocha": "2.1.0",
-    "chai": "1.10.0"
+    "chai": "1.10.0",
+    "istanbul": "0.3.5",
+    "mocha-lcov-reporter": "0.0.1",
+    "coveralls": "2.11.2"
   }
 }
