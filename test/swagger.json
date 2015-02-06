@@ -14,18 +14,7 @@
           "200": {
             "description": "Returns all the pets"
           }
-        },
-        "x-amples": [
-          {
-            "request": { },
-            "response": {
-              "status": 200,
-              "headers": {
-                "content-type": "application/json"
-              }
-            }
-          }
-        ]
+        }
       }
     },
     "/pets/{id}": {

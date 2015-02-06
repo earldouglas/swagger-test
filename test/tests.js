@@ -6,13 +6,13 @@ var fs = require('fs');
 var swaggerTest = require('../lib/swagger-test');
 var assert = require('chai').assert;
 
-describe('test generation', function () {
+describe('test generation with inference', function () {
 
   var testDir = __dirname;
   var buffer  = fs.readFileSync(testDir + '/swagger.json');
   var spec    = JSON.parse(buffer);
 
-  var xamples = swaggerTest.parse(spec);
+  var xamples = swaggerTest.parse(spec, { inferXamples: true });
 
   it('should contain three test cases', function () {
     assert.equal(xamples.length, 3);
