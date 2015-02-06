@@ -57,7 +57,7 @@ describe('test generation with inference', function () {
       assert.deepEqual(xamples[2], expectedPetIdXample('fido7'));
   });
 
-  it('should follow with one inferre test', function () {
+  it('should follow with one inferred test', function () {
       assert.deepEqual(xamples[3], expectedPetIdXample('{id}'));
   });
 
