@@ -23,14 +23,14 @@ The `xamples` array contains a sequence of request/response pairs.  Test them ag
 var preq = require('preq');
 
 describe('specification-driven tests', function () {
-    xamples.forEach(function (xample) {
-  it(xample.description, function() {
-return preq[xample.request.method](xample.request)
-.then(function (response) {
-    assert.deepEqual(response, xample.response);
-});
-  });
+  xamples.forEach(function (xample) {
+    it(xample.description, function() {
+      return preq[xample.request.method](xample.request)
+      .then(function (response) {
+        assert.deepEqual(response, xample.response);
+      });
     });
+  });
 });
 ```
 
