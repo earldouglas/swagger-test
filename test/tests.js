@@ -21,7 +21,6 @@ describe('test generation', function () {
   it('should first test GET /pets', function () {
       assert.deepEqual(xamples[0], {
           "description": "get /pets",
-          "prereqs": [],
           "request": {
               "method": "get",
               "uri": "localhost/v1/pets"
@@ -38,7 +37,6 @@ describe('test generation', function () {
   it ('should next test GET /pets/fido4', function () {
       assert.deepEqual(xamples[1], {
           "description": "get /pets/{id}",
-          "prereqs": [],
           "request": {
               "params": {
                   "id": "fido4"
@@ -58,7 +56,6 @@ describe('test generation', function () {
   it ('should next test GET /pets/fido7', function () {
       assert.deepEqual(xamples[2], {
         "description": "get /pets/{id}",
-        "prereqs": [],
         "request": {
             "params": {
                 "id": "fido7"
