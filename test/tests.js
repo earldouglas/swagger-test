@@ -12,13 +12,15 @@ describe('test generation with inference', function () {
   var buffer  = fs.readFileSync(testDir + '/swagger.json');
   var spec    = JSON.parse(buffer);
 
-  var xamples = swaggerTest.parse(spec, { inferXamples: true });
-
-  it('should contain three test cases', function () {
-    assert.equal(xamples.length, 3);
+  var xamples = swaggerTest.parse(spec, {
+    inferXamples: true,
   });
 
-  it('should first test GET /pets', function () {
+  it('should contain four test cases', function () {
+    assert.equal(xamples.length, 4);
+  });
+
+  it('should start with x-ample test: get /pets', function () {
       assert.deepEqual(xamples[0], {
           "description": "get /pets",
           "request": {
@@ -34,42 +36,29 @@ describe('test generation with inference', function () {
       });
   });
 
-  it ('should next test GET /pets/fido4', function () {
-      assert.deepEqual(xamples[1], {
-          "description": "get /pets/{id}",
-          "request": {
-              "params": {
-                  "id": "fido4"
-              },
-              "method": "get",
-              "uri": "localhost/v1/pets/fido4"
-          },
-          "response": {
-              "status": 200,
-              "headers": {
-                  "content-type": "application/json"
-              }
+  function expectedPetIdXample(id) {
+      return {
+        description: 'get /pets/{id}',
+        request: {
+          method: 'get',
+          uri: 'localhost/v1/pets/' + id
+        },
+        response: {
+          status: 200,
+          headers: {
+            'content-type': 'application/json'
           }
-      });
+        }
+      };
+  }
+
+  it('should follow with two x-ample tests', function () {
+      assert.deepEqual(xamples[1], expectedPetIdXample('fido4'));
+      assert.deepEqual(xamples[2], expectedPetIdXample('fido7'));
   });
 
-  it ('should next test GET /pets/fido7', function () {
-      assert.deepEqual(xamples[2], {
-        "description": "get /pets/{id}",
-        "request": {
-            "params": {
-                "id": "fido7"
-            },
-            "method": "get",
-            "uri": "localhost/v1/pets/fido7"
-        },
-        "response": {
-            "status": 200,
-            "headers": {
-                "content-type": "application/json"
-            }
-        }
-      });
+  it('should follow with one inferre test', function () {
+      assert.deepEqual(xamples[3], expectedPetIdXample('{id}'));
   });
 
 });
