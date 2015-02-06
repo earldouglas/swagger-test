@@ -83,3 +83,9 @@ For cases where an explicit examples don't need to be specified, they are inferr
   }
 }
 ```
+
+To enable indirect test inference, set `inferXamples` to `true` in the `options` argument to `parse()`:
+
+```javascript
+var xamples = swaggerTest.parse(spec, { inferXamples: true });
+```
