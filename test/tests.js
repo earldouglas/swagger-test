@@ -36,7 +36,7 @@ describe('test generation with inference', function () {
 
   it ('should next test GET /pets/fido4', function () {
       assert.deepEqual(xamples[1], {
-          "description": "get /pets/{id}",
+          "description": "get /pets/{id}: returns 200 for fido4",
           "request": {
               "params": {
                   "id": "fido4"
