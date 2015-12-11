@@ -51,6 +51,7 @@ The `x-amples` extension allows explicit specification of request/response pairs
   ...
   "x-amples": [
     {
+      "description": "short description of example; it's used as testcase description"
       "request": {
         "params": {
           "id": "fido4"

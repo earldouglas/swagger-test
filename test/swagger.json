@@ -37,6 +37,7 @@
         },
         "x-amples": [
           {
+            "description": "get /pets/{id}: returns 200 for fido4",
             "request": {
               "params": {
                 "id": "fido4"
