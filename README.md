@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.org/earldouglas/swagger-test.svg?branch=master)](https://travis-ci.org/earldouglas/swagger-test) [![Coverage Status](https://coveralls.io/repos/github/earldouglas/swagger-test/badge.svg?branch=master)](https://coveralls.io/github/earldouglas/swagger-test?branch=master)
 
-## Quicker start
+## Quick start
 
 To run swagger-test without writing any JavaScript, install the CLI:
 
@@ -36,7 +36,7 @@ the response was:
 }
 ```
 
-## Quick start
+## Usage
 
 Load the npm module:
 
@@ -68,7 +68,7 @@ describe('specification-driven tests', function () {
 });
 ```
 
-## Usage
+## Test generation
 
 Tests are generated in one of two ways:
 
