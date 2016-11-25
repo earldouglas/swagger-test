@@ -2,6 +2,40 @@
 
 [![Build Status](https://travis-ci.org/earldouglas/swagger-test.svg?branch=master)](https://travis-ci.org/earldouglas/swagger-test) [![Coverage Status](https://coveralls.io/repos/github/earldouglas/swagger-test/badge.svg?branch=master)](https://coveralls.io/github/earldouglas/swagger-test?branch=master)
 
+## Quicker start
+
+To run swagger-test without writing any JavaScript, install the CLI:
+
+```
+$ npm install -g swagger-test
+```
+
+Then, start your server under test, and pipe your Swagger specification
+to `swagger-test`:
+
+```
+$ cat swagger.json | swagger-test
+response did not match specification
+the specification is:
+{
+  "status": 200,
+  "headers": {
+    "content-type": "application/json; charset=utf-8"
+  },
+  "body": {
+    "greeting": "Hello, world!"
+  }
+}
+the response was:
+{
+  "status": 200,
+  "headers": {
+    "content-type": "text/html; charset=utf-8"
+  },
+  "body": "Hello, world!"
+}
+```
+
 ## Quick start
 
 Load the npm module:
