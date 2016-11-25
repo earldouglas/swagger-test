@@ -2,6 +2,9 @@
   "name": "swagger-test",
   "version": "0.3.0",
   "description": "Specification-driven REST API testing",
+  "bin": {
+    "swagger-test": "./swagger-test.js"
+  },
   "main": "lib/swagger-test.js",
   "scripts": {
     "test": "mocha",
