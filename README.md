@@ -44,14 +44,16 @@ Load the npm module:
 var swaggerTest = require('swagger-test');
 ```
 
-Parse a Swagger specification (e.g. from a Web URL, or the local file system):
+Parse a Swagger specification (e.g. from a Web URL, or the local file
+system):
 
 ```javascript
 var swaggerSpec = // load a Swagger specification as a JavaScript object
 var xamples = swaggerTest.parse(swaggerSpec);
 ```
 
-The `xamples` array contains a sequence of request/response pairs.  Test them against your service:
+The `xamples` array contains a sequence of request/response pairs.  Test
+them against your service:
 
 ```javascript
 var preq = require('preq');
@@ -72,12 +74,14 @@ describe('specification-driven tests', function () {
 
 Tests are generated in one of two ways:
 
-1. Directly from the the `x-amples` extension to the Swagger specification
+1. Directly from the the `x-amples` extension to the Swagger
+   specification
 1. Indirectly by inferring examples from the Swagger specification
 
 ### Direct test specification
 
-The `x-amples` extension allows explicit specification of request/response pairs:
+The `x-amples` extension allows explicit specification of
+request/response pairs:
 
 ```javascript
 "/pets/{id}": {
@@ -106,7 +110,8 @@ These can be specified for any operation.
 
 ### Indirect test inference
 
-For cases where an explicit examples don't need to be specified, they are inferred directly from the Swagger operation's specification.
+For cases where an explicit examples don't need to be specified, they
+are inferred directly from the Swagger operation's specification.
 
 ```javascript
 "get": {
@@ -119,7 +124,8 @@ For cases where an explicit examples don't need to be specified, they are inferr
 }
 ```
 
-To enable indirect test inference, set `inferXamples` to `true` in the `options` argument to `parse()`:
+To enable indirect test inference, set `inferXamples` to `true` in the
+`options` argument to `parse()`:
 
 ```javascript
 var xamples = swaggerTest.parse(spec, { inferXamples: true });
