@@ -95,10 +95,11 @@ request/response pairs:
           "id": "fido4"
         }
       },
-      "response": {
-        "status": 200,
-        "headers": {
-          "content-type": "application/json"
+      "responses": {
+        "200": {
+          "headers": {
+            "content-type": "application/json"
+          }
         }
       }
     }
