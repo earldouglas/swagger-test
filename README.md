@@ -63,7 +63,7 @@ describe('specification-driven tests', function () {
     it(xample.description, function() {
       return preq[xample.request.method](xample.request)
       .then(function (response) {
-        assert.deepEqual(response, xample.response);
+        assert.deepEqual(response, xample.responses[response.status]);
       });
     });
   });
@@ -95,10 +95,11 @@ request/response pairs:
           "id": "fido4"
         }
       },
-      "response": {
-        "status": 200,
-        "headers": {
-          "content-type": "application/json"
+      "responses": {
+        "200": {
+          "headers": {
+            "content-type": "application/json"
+          }
         }
       }
     }

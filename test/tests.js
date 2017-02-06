@@ -25,10 +25,11 @@ describe('test generation with inference', function () {
               "method": "get",
               "uri": "localhost/v1/pets"
           },
-          "response": {
-              "status": 200,
-              "headers": {
-                  "content-type": "application/json"
+          "responses": {
+              "200": {
+                "headers": {
+                    "content-type": "application/json"
+                }
               }
           }
       });
@@ -44,10 +45,11 @@ describe('test generation with inference', function () {
               "method": "get",
               "uri": "localhost/v1/pets/fido4"
           },
-          "response": {
-              "status": 200,
-              "headers": {
-                  "content-type": "application/json"
+          "responses": {
+              "200": {
+                "headers": {
+                    "content-type": "application/json"
+                }
               }
           }
       });
@@ -63,10 +65,11 @@ describe('test generation with inference', function () {
             "method": "get",
             "uri": "localhost/v1/pets/fido7"
         },
-        "response": {
-            "status": 200,
-            "headers": {
-                "content-type": "application/json"
+        "responses": {
+            "200": {
+              "headers": {
+                  "content-type": "application/json"
+              }
             }
         }
       });
