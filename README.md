@@ -7,7 +7,7 @@
 To run swagger-test without writing any JavaScript, install the CLI:
 
 ```
-$ npm install -g swagger-test
+$ npm install -g swagger-test@0.6.0
 ```
 
 Then, start your server under test, and pipe your Swagger specification
