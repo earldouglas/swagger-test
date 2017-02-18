@@ -21,7 +21,7 @@ rl.on('close', function () {
   var xamples = swaggerTest.parse(swaggerSpec);
     xamples.forEach(function (xample) {
     preq[xample.request.method](xample.request).then(function (response) {
-      if (response.status && xample.responses[response.status] {
+      if (response.status && xample.responses[response.status]) {
         var xampleResponse = xample.responses[response.status];
         if (response.headers && xampleResponse.headers) {
           for (var h in response.headers) {
