@@ -23,7 +23,7 @@ describe('test generation with inference', function () {
           "description": "get /pets",
           "request": {
               "method": "get",
-              "uri": "localhost/v1/pets"
+              "uri": "http://localhost/v1/pets"
           },
           "responses": {
               "200": {
@@ -43,7 +43,7 @@ describe('test generation with inference', function () {
                   "id": "fido4"
               },
               "method": "get",
-              "uri": "localhost/v1/pets/fido4"
+              "uri": "http://localhost/v1/pets/fido4"
           },
           "responses": {
               "200": {
@@ -63,7 +63,7 @@ describe('test generation with inference', function () {
                 "id": "fido7"
             },
             "method": "get",
-            "uri": "localhost/v1/pets/fido7"
+            "uri": "http://localhost/v1/pets/fido7"
         },
         "responses": {
             "200": {
