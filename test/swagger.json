@@ -1,6 +1,7 @@
 {
   "swagger": "2.0",
   "host": "localhost",
+  "schemes": ["http"],
   "info": {
     "version": "1.0.0",
     "title": "Pet store"
