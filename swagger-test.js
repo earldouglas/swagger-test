@@ -17,6 +17,7 @@ rl.on('line', function (line) {
 });
 
 rl.on('close', function () {
+  var fail = false;
   var swaggerSpec = JSON.parse(source.join('\n'));
   var xamples = swaggerTest.parse(swaggerSpec);
     xamples.forEach(function (xample) {
@@ -35,6 +36,7 @@ rl.on('close', function () {
         try {
           assert.deepEqual(response, xampleResponse);
         } catch (e) {
+          fail = true;
           console.error('response did not match specification');
           console.error('the specification is:');
           console.error(JSON.stringify(e.expected, null, 2));
@@ -42,7 +44,12 @@ rl.on('close', function () {
           console.error(JSON.stringify(e.actual, null, 2));
         }
       } else {
+        fail = true;
         console.error('no x-ample response found');
+      }
+    }).then(function () {
+      if (fail) {
+        process.exit(1);
       }
     });
   });
