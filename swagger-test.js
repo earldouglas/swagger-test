@@ -66,14 +66,15 @@ rl.on('close', function () {
       console.error('\n  -', x.description);
       console.error();
       var diff = jsonDiff.diff(x.actual, x.expected);
-      JSON.stringify(diff, null, 2).split('\n').forEach(function (x) {
-        console.error('   ', x.replace(/"__old":/g, '"expected":')
-                              .replace(/"__new":/g, '"received":'));
-      });
+      JSON.stringify(diff, null, 2);
     });
 
     if (failed.length > 0) {
       process.exit(1);
     }
+
+  }).catch(function (r) {
+    console.error(r);
+    process.exit(1);
   });
 });
