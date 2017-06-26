@@ -66,7 +66,7 @@ rl.on('close', function () {
       console.error('\n  -', x.description);
       console.error();
       var diff = jsonDiff.diff(x.actual, x.expected);
-      JSON.stringify(diff, null, 2);
+      console.error(JSON.stringify(diff, null, 2));
     });
 
     if (failed.length > 0) {
