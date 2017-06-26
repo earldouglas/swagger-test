@@ -28,6 +28,7 @@ rl.on('close', function () {
       preq[xample.request.method](xample.request).then(function (response) {
         if (response.status && xample.responses[response.status]) {
           var xampleResponse = xample.responses[response.status];
+          xampleResponse.status = response.status;
           if (response.headers && xampleResponse.headers) {
             for (var h in response.headers) {
               if (response.headers.hasOwnProperty(h)) {
