@@ -29,6 +29,14 @@
             "type": "string",
             "required": true,
             "default": "fido3"
+          },
+          {
+            "name": "deep",
+            "in": "query",
+            "description": "Whether to fetch the full object",
+            "type": "boolean",
+            "required": false,
+	    "default": false
           }
         ],
         "responses": {
@@ -55,7 +63,8 @@
           {
             "request": {
               "params": {
-                "id": "fido7"
+                "id": "fido7",
+                "deep": true
               }
             },
             "responses": {
