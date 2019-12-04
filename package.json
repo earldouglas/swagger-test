@@ -29,15 +29,15 @@
   },
   "homepage": "https://github.com/earldouglas/swagger-test",
   "dependencies": {
-    "json-diff": "0.3.1",
-    "preq": "0.5.0",
-    "url-template": "2.0.4"
+    "json-diff": "0.5.4",
+    "preq": "0.5.13",
+    "url-template": "2.0.8"
   },
   "devDependencies": {
-    "mocha": "2.1.0",
-    "chai": "1.10.0",
-    "istanbul": "0.3.5",
-    "mocha-lcov-reporter": "0.0.1",
-    "coveralls": "2.11.2"
+    "mocha": "6.2.2",
+    "chai": "4.2.0",
+    "istanbul": "0.4.5",
+    "mocha-lcov-reporter": "1.3.0",
+    "coveralls": "3.0.9"
   }
 }
