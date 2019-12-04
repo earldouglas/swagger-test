@@ -1,4 +1,7 @@
 language: node_js
 node_js:
   - 10
-script: npm run-script coverage && npm run-script coveralls
+script: npm test
+after_success:
+  - npm run coverage
+  - npm run coveralls
