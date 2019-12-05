@@ -60,10 +60,11 @@ describe('test generation with inference', function () {
         "description": "get /pets/{id}",
         "request": {
             "params": {
-                "id": "fido7"
+                "id": "fido7",
+                "deep": true
             },
             "method": "get",
-            "uri": "http://localhost/v1/pets/fido7"
+            "uri": "http://localhost/v1/pets/fido7?deep=true"
         },
         "responses": {
             "200": {
