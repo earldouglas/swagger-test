@@ -1,6 +1,6 @@
 {
   "name": "swagger-test",
-  "version": "0.7.3",
+  "version": "0.8.0",
   "description": "Specification-driven REST API testing",
   "bin": {
     "swagger-test": "./swagger-test.js"
