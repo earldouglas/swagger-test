@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/earldouglas/swagger-test",
   "dependencies": {
-    "json-diff": "0.5.4",
+    "json-diff": "0.7.1",
     "preq": "0.5.13",
     "url-template": "2.0.8"
   },
